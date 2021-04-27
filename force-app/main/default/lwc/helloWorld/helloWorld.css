@@ -1,0 +1,10 @@
+input {
+color: blue;
+}
+body{
+    background-color: white;
+}
+.msgEnv{
+    min-height : 50px;
+    background-color: white;
+}

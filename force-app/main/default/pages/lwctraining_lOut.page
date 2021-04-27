@@ -1,0 +1,33 @@
+<!-- History:
+<!-- LWC Training Lightning out in SF VF page -->
+<apex:page >
+    <apex:includeLightning />
+    <apex:pageBlock mode="maindetail">
+        <apex:pageBlockSection >
+            <apex:pageBlockSectionItem >
+                <apex:outputPanel id="LWCTest">
+                    <!--Lighnting Out Pinned Cases-->
+                    <div id="LWCTESTId">
+                    </div>
+                    <script>
+                    var myUserContext = "{!$User.UITheme}";
+                    $Lightning.use("c:PublicApp", function() {
+                        $Lightning.createComponent(
+                            "c:helloWorld",
+                            { UserContext: myUserContext },
+                            "LWCTESTId",
+                            function(cmp) {
+                                $A.eventService.addHandler({
+                                    event: 'force:navigateToSObject',
+                                    handler: function(event) {
+                                    }
+                                });
+                                console.log('component created');
+                            });
+                    });
+                    </script>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock> 
+</apex:page>

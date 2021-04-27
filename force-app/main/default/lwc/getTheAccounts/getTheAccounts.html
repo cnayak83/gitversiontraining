@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Example 2: Displaying Account Data using @wire" icon-name="custom:custom63">
+        <div>
+            <div class="msgEnv">
+                <template if:true={accounts.data}>
+                    <table>
+                        <th>Name</th>
+                        <template for:each={accounts.data} for:item="account">
+                            <tr key={account.Id}>
+                                <td key={account.Id}>
+                                    <p key={account.Id}>{account.Name}</p>
+                                </td>
+                            </tr>
+                        </template>
+                    </table>
+                </template>
+                <template if:true={accounts.error}>
+                    Error Fetching accounts
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

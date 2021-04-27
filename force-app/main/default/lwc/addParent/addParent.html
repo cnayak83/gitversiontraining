@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Example 5: Parent to Child Communication" icon-name="custom:custom63">
+    PARENT DATA HERE:
+    <lightning-input name="parentdata" onchange={genericOnChange} value={parentdata}></lightning-input>
+    <br></br>
+    CHILD DATA HERE:
+    <c-add-child addthisnumber={parentdata}></c-add-child>
+    <br></br>
+    PARENT BUTTON BELOW:
+    <lightning-button icon-name="utility:add" onclick={handleAddParent}></lightning-button>
+    </lightning-card>
+</template>

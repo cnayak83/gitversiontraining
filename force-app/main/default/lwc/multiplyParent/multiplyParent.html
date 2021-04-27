@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Example 4: Child to Parent Communication." icon-name="custom:custom63">
+        <div class="msgEnv">
+            <lightning-input name="parentdata" onchange={genericOnChange} value={parentdata}></lightning-input>
+            <br></br>
+
+            <c-multiply-child onmultiply={handleMultiplyParent}></c-multiply-child>
+            <br></br>
+            RESULT in PARENT:
+            {parentrecresult}
+        </div>
+    </lightning-card>
+</template>

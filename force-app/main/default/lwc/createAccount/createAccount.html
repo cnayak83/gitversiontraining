@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Example 3: (Imperative Apex): Search/Create Account on click Of Button" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+
+            <!-- Input -->
+            <lightning-input name="searchstr" onchange={genericOnChange} value={searchstr}></lightning-input>
+            <br></br>
+
+            <!-- Custom Buttons -->
+            <p class="slds-m-bottom_small">
+                <lightning-button label="Search Account" onclick={handleGetAccounts}></lightning-button>
+                <br />
+                <lightning-button label="Create Account" onclick={handleCreateAccounts}></lightning-button>
+            </p>
+
+            <!-- Display the account data from search -->
+            <template if:true={accounts}>
+                SEARCH RESULTS:
+                <template for:each={accounts} for:item=acct>
+                    <h4 key={acct.Id}>{acct.Id}</h4>
+                    <h4 key={acct.Name}>{acct.Name}</h4>
+                </template>
+            </template>
+            <template if:true={errmsg}>
+                {errmsg}
+            </template>
+        </div>
+    </lightning-card>
+</template>
